@@ -1,0 +1,536 @@
+description: article-json store
+salt: 2017.7.5
+domain: elifesciences.org
+intdomain: false
+subdomain: lax
+repo: https://github.com/elifesciences/lax.git
+formula-repo: https://github.com/elifesciences/lax-formula
+private-repo: git@github.com:elifesciences/builder-private
+configuration-repo: git@github.com:elifesciences/builder-configuration
+default-branch: master
+formula-dependencies:
+- https://github.com/elifesciences/builder-base-formula
+aws:
+    account_id: 512686554592
+    ec2:
+        cluster-size: 1
+        dns-external-primary: false
+        dns-internal: false
+        overrides: {}
+        suppressed: []
+        ami: ami-92002785
+        masterless: false
+        master_ip: 10.0.2.198
+        security-group: {}
+    region: us-east-1
+    vpc-id: vpc-78a2071d
+    subnet-id: subnet-1d4eb46a
+    subnet-cidr: 10.0.2.0/24
+    availability-zone: us-east-1d
+    redundant-subnet-id: subnet-7a31dd46
+    redundant-subnet-cidr: 10.0.3.0/24
+    redundant-availability-zone: us-east-1e
+    type: t2.small
+    sqs:
+        bot-lax-{instance}-inc: {}
+        bot-lax-{instance}-out: {}
+    sns: []
+    s3: {}
+    subdomains: []
+    vault:
+        address: https://master-server.elifesciences.org:8200
+    ports:
+    - 22
+    - 443
+    -   80:
+            cidr-ip: 10.0.0.0/16
+    - 8001
+aws-alt:
+    fresh:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-0b425589c7bb7663d
+            masterless: false
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: uses a public Ubuntu AMI instead of an elife generated basebox.
+    '1804':
+        account_id: 512686554592
+        ec2: true
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: Ubuntu 18.04 (Bionic)
+    '1604':
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-14a1d06e
+            masterless: false
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: uses Ubuntu 16.04 (Xenial)
+    '1404':
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-92002785
+            masterless: false
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: uses Ubuntu 14.04 (Trusty)
+    s1804:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-00aedeb287fe8c9d6
+            masterless: true
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: isolated from the master-server and uses Ubuntu 18.04 (Bionic)
+    standalone1604:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-14a1d06e
+            masterless: true
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: isolated from the master-server and uses Ubuntu 16.04 (Xenial)
+    s1604:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-14a1d06e
+            masterless: true
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: alias for standalone1604 short enough to fit into hostnames
+    standalone1404:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-92002785
+            masterless: true
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        rds:
+            multi-az: false
+            engine: postgres
+            version: '9.4'
+            type: db.t2.small
+            storage: 5
+            storage-type: Standard
+            backup-retention: 28
+            params: []
+            encryption: false
+            subnets:
+            - subnet-8eea67d7
+            - subnet-dbc471f0
+            deletion-policy: Delete
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: isolated from the master-server and uses (deprecated) Ubuntu
+            14.04 (Trusty)
+    standalone:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 1
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-92002785
+            masterless: true
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: isolated from the master-server and uses same AMI as default
+            configuration
+    end2end:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 2
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-92002785
+            masterless: false
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        rds:
+            multi-az: false
+            engine: postgres
+            version: '9.4'
+            type: db.t2.small
+            storage: 5
+            storage-type: Standard
+            backup-retention: 2
+            params: []
+            encryption: false
+            subnets:
+            - subnet-8eea67d7
+            - subnet-dbc471f0
+            deletion-policy: Snapshot
+        ext:
+            type: standard
+            size: 10
+            device: /dev/sdh
+        elb:
+            stickiness: false
+            protocol:
+            - https
+            additional_listeners:
+                bot_lax_adaptor:
+                    protocol: https
+                    port: 8001
+            idle_timeout: 60
+            certificate: arn:aws:iam::512686554592:server-certificate/cloudfront/wildcard.elifesciences.org/2019.wildcard.elifesciences.org
+            healthcheck:
+                protocol: http
+                port: 80
+                path: /api/v2/ping
+                timeout: 4
+                interval: 5
+                unhealthy_threshold: 2
+                healthy_threshold: 2
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: production-like
+    prod:
+        account_id: 512686554592
+        ec2:
+            cluster-size: 2
+            dns-external-primary: false
+            dns-internal: false
+            overrides: {}
+            suppressed: []
+            ami: ami-92002785
+            masterless: false
+            master_ip: 10.0.2.198
+            security-group: {}
+        region: us-east-1
+        vpc-id: vpc-78a2071d
+        subnet-id: subnet-1d4eb46a
+        subnet-cidr: 10.0.2.0/24
+        availability-zone: us-east-1d
+        redundant-subnet-id: subnet-7a31dd46
+        redundant-subnet-cidr: 10.0.3.0/24
+        redundant-availability-zone: us-east-1e
+        type: t2.small
+        rds:
+            multi-az: true
+            engine: postgres
+            version: '9.4'
+            type: db.t2.small
+            storage: 5
+            storage-type: Standard
+            backup-retention: 28
+            params: []
+            encryption: false
+            subnets:
+            - subnet-8eea67d7
+            - subnet-dbc471f0
+            deletion-policy: Snapshot
+        ext:
+            type: standard
+            size: 10
+            device: /dev/sdh
+        elb:
+            stickiness: false
+            protocol:
+            - https
+            additional_listeners:
+                bot_lax_adaptor:
+                    protocol: https
+                    port: 8001
+            idle_timeout: 60
+            certificate: arn:aws:iam::512686554592:server-certificate/cloudfront/wildcard.elifesciences.org/2019.wildcard.elifesciences.org
+            healthcheck:
+                protocol: http
+                port: 80
+                path: /api/v2/ping
+                timeout: 4
+                interval: 5
+                unhealthy_threshold: 2
+                healthy_threshold: 2
+        sqs:
+            bot-lax-{instance}-inc: {}
+            bot-lax-{instance}-out: {}
+        sns: []
+        s3: {}
+        subdomains: []
+        vault:
+            address: https://master-server.elifesciences.org:8200
+        ports:
+        - 22
+        - 443
+        -   80:
+                cidr-ip: 10.0.0.0/16
+        - 8001
+        description: RDS backed
+gcp:
+    bigquery: false
+vagrant:
+    box: ubuntu/trusty64
+    ip: 192.168.33.44
+    ram: 2048
+    cpus: 2
+    cpucap: 100
+    ports:
+        1239: 80
+        1240: 8001
+gcp-alt: {}
+
